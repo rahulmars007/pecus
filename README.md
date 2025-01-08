@@ -19,18 +19,16 @@ High-quality output: Preserves the original quality of your documents.
 Getting Started:
 
 Clone the repository:
+*git clone https://github.com/rahulmars007/pecus*
 
-Bash
-
-git clone https://github.com/rahulmars007/pecus
 Install dependencies:
+*pip install -r requirements.txt*
 
-pip install -r requirements.txt
 Run the application:   
+*python manage.py runserver*
 
-python manage.py runserver
 Access the application:
-Open your web browser and navigate to http://127.0.0.1:8000/ (or the specified port).   
+Open your web browser and navigate to *http://127.0.0.1:8000/* (or the specified port).   
 
 
 
