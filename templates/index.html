@@ -1,0 +1,140 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'index-content.css' %}">
+
+    <title>PECUS</title>
+</head>
+<body>
+<div class="container">
+</div>
+<nav class="navbar navbar-dark" style="background-color: #74a786;">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/"><img src="{% static 'icons/logo.png' %}" height="60" width="100"/></a>
+        
+    </nav>
+</nav>
+<div>
+    <br/>
+    <H1 style="text-align: center; font-family: Arial, Helvetica, sans-serif; color: black">Welcome to Pecus</H1>
+    <br/>
+    <br/>
+</div>
+</div>
+<!-- <H3 style="text-align: center; font-family: Arial, Helvetica, sans-serif; color: black">Convert From PDF</H3> -->
+<div class="container" >
+    <div class="row" >
+        <div class="col-md-3 text-center" style="opacity: 1;" onclick="location.href='./pdftoword'">
+            <div class="content-box" style="background-color: #b7e2c6;" >
+                <h4 style="margin-top: 65px" class="content-box-title">PDF to Word</h4>
+                <!-- <p class="content-box-sub">Convert your PDF to a Word file</p> -->
+            </div>
+        </div>
+        <div class="col-md-3" style="opacity: 1;" onclick="location.href='./pdftojpg'">
+            <div class="content-box text-center" style="background-color: #b7e2c6;">
+                <h4 style="margin-top: 65px" class="content-box-title">PDF to Image</h4>
+                
+            </div>
+        </div>
+        <div class="col-md-3" style="opacity: 1;" onclick="location.href='./pdftotext'">
+            <div class="content-box text-center" style="background-color: #b7e2c6;">
+                <h4 style="margin-top: 65px" class="content-box-title">PDF to Text</h4>
+                
+            </div>
+        </div>
+        <div class="col-md-3" style="opacity: 1;" onclick="location.href='./pdftoexcel'">
+            <div class="content-box text-center" style="background-color: #b7e2c6;">
+                <h4 style="margin-top: 65px" class="content-box-title">PDF to Excel</h4>
+                
+            </div>
+        </div>
+        <div class="col-md-3" style="opacity: 1;" onclick="location.href='./pdftopower'">
+            <div class="content-box text-center" style="background-color: #b7e2c6;">
+                <h4 style="margin-top: 65px" class="content-box-title">PDF to PowerPoint</h4>
+            </div>
+        </div>
+    <!-- </div>
+</div> -->
+<!-- <br/>
+<br/>
+<H3 style="text-align: center; font-family: Arial, Helvetica, sans-serif; color: black">Convert to PDF</H3> -->
+<!-- <div class="container">
+    <div class="row"> -->
+        <div class="col-md-3  text-center" style="opacity: 1;" onclick="location.href='./jpgtopdf'">
+            <div class="content-box" style="background-color: #b7e2c6;" >
+                <h4 style="margin-top: 65px" class="content-box-title">Image to PDF</h4>
+            </div>
+        </div>
+        <div class="col-md-3" style="opacity: 1;" onclick="location.href='./wordtopdf'">
+            <div class="content-box text-center" style="background-color: #b7e2c6;">
+                <h4 style="margin-top: 65px" class="content-box-title">Word to PDF</h4>
+            </div>
+        </div>
+        <div class="col-md-3  text-center" style="opacity: 1;" onclick="location.href='./merge'">
+            <div class="content-box" style="background-color: #b7e2c6;" >
+                <h4 style="margin-top: 65px" class="content-box-title">Merge Your PDF</h4>
+            </div>
+        </div>
+
+    <!-- </div>
+</div> -->
+<!-- <br/>
+<br/>
+<H3 style="text-align: center; font-family: Arial, Helvetica, sans-serif; color: black">Other</H3> -->
+<!-- <div class="container">
+    <div class="row"> -->
+        <div class="col-md-3  text-center" style="opacity: 1;" onclick="location.href='./pdfrotate'">
+            <div class="content-box" style="background-color: #b7e2c6;" >
+                <h4 style="margin-top: 65px" class="content-box-title">Rotate your PDF</h4>
+                
+            </div>
+        </div>
+        <div class="col-md-3  text-center" style="opacity: 1;" onclick="location.href='./protect'">
+            <div class="content-box" style="background-color: #b7e2c6;" >
+                <h4 style="margin-top: 65px" class="content-box-title">Protect Your PDF</h4>
+            </div>
+        </div>
+        <div class="col-md-3  text-center" style="opacity: 1;" onclick="location.href='./split'">
+            <div class="content-box" style="background-color: #b7e2c6;" >
+                <h4 style="margin-top: 65px" class="content-box-title">Split Your PDF</h4>
+            </div>
+        </div>
+        <div class="col-md-3  text-center" style="opacity: 1;" onclick="location.href='./delete'">
+            <div class="content-box" style="background-color: #b7e2c6;" >
+                <h4 style="margin-top: 65px" class="content-box-title">Delete Your PDF</h4>
+            </div>
+        </div>
+                 
+    </div>
+</div>
+<br>
+<br>
+<br>
+<center>
+    <footer>
+        <p>© 2021 Pecus</p>
+    </footer>
+</center>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>
