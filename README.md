@@ -30,5 +30,10 @@ Run the application:  
 Access the application:
 Open your web browser and navigate to *http://127.0.0.1:8000/* (or the specified port).   
 
+![image](https://github.com/user-attachments/assets/5b506a3a-4446-40b3-94c7-2d89249a30fd)
+
+![image](https://github.com/user-attachments/assets/fa560039-eaee-4cea-abfa-4ee15d874435)
+
+
 
 
