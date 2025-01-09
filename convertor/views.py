@@ -33,20 +33,46 @@ def jpgToPdf(request):
         return render(request, 'jpgtopdf.html', {'url': str(res)})
     return render(request, 'jpgtopdf.html')
 
+# def pdftojpg(request):
+#     # pdf2image
+#     if request.method == "POST":
+#         # creating random folder name for each user
+#         res = ''.join(random.choice(string.ascii_lowercase) for x in range(10))
+#         path_to_upload = os.path.join('./static/uploaded_files/pdf2jpg', str(res))
+#         os.makedirs(path_to_upload)
+#         files = request.FILES
+#         for file in files.getlist('files'):
+#             with open(path_to_upload + '/sample.pdf', 'w+b') as f:
+#                 for chunk in file.chunks():
+#                     f.write(chunk)
+#         pdf_to_image(path_to_upload)
+#         return render(request, 'pdftojpg.html', {'url': str(res)})
+#     return render(request, 'pdftojpg.html')
+
 def pdftojpg(request):
-    # pdf2image
     if request.method == "POST":
-        # creating random folder name for each user
-        res = ''.join(random.choice(string.ascii_lowercase) for x in range(10))
-        path_to_upload = os.path.join('./static/uploaded_files/pdf2jpg', str(res))
-        os.makedirs(path_to_upload)
-        files = request.FILES
-        for file in files.getlist('files'):
-            with open(path_to_upload + '/sample.pdf', 'w+b') as f:
+        # Generate a random folder name for each user
+        res = ''.join(random.choices(string.ascii_lowercase, k=10))
+        path_to_upload = os.path.join('./static/uploaded_files/pdf2jpg', res)
+        os.makedirs(path_to_upload, exist_ok=True)
+
+        # Save uploaded files
+        uploaded_files = request.FILES.getlist('files')
+        if not uploaded_files:
+            return render(request, 'pdftojpg.html', {'error': 'No files uploaded!'})
+
+        for file in uploaded_files:
+            with open(os.path.join(path_to_upload, 'sample.pdf'), 'wb') as f:
                 for chunk in file.chunks():
                     f.write(chunk)
-        pdf_to_image(path_to_upload)
-        return render(request, 'pdftojpg.html', {'url': str(res)})
+        # Convert PDF to images
+        try:
+            pdf_to_image(path_to_upload)
+        except Exception as e:
+            return render(request, 'pdftojpg.html', {'error': f'Error processing file: {e}'})
+
+        return render(request, 'pdftojpg.html', {'url': res})
+
     return render(request, 'pdftojpg.html')
 
 def pdfrotate(request):
