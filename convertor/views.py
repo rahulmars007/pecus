@@ -10,6 +10,7 @@ from service.pdftoword.pdftoword import pdf_word
 from service.mergepdf.mergepdf import merging
 from service.split.split_pdf import split_pdf
 from service.delete.delete_pdf import delete_pdf
+from service.securePdfContent.securePdfContent import securePdf
 from django.shortcuts import render
 from docx2pdf import convert
 import string
@@ -33,21 +34,21 @@ def jpgToPdf(request):
         return render(request, 'jpgtopdf.html', {'url': str(res)})
     return render(request, 'jpgtopdf.html')
 
-# def pdftojpg(request):
-#     # pdf2image
-#     if request.method == "POST":
-#         # creating random folder name for each user
-#         res = ''.join(random.choice(string.ascii_lowercase) for x in range(10))
-#         path_to_upload = os.path.join('./static/uploaded_files/pdf2jpg', str(res))
-#         os.makedirs(path_to_upload)
-#         files = request.FILES
-#         for file in files.getlist('files'):
-#             with open(path_to_upload + '/sample.pdf', 'w+b') as f:
-#                 for chunk in file.chunks():
-#                     f.write(chunk)
-#         pdf_to_image(path_to_upload)
-#         return render(request, 'pdftojpg.html', {'url': str(res)})
-#     return render(request, 'pdftojpg.html')
+
+def securePdfContent(request):
+    if request.method == "POST":
+        res = ''.join(random.choice(string.ascii_lowercase) for x in range(10))
+        path_to_upload = os.path.join('./static/uploaded_files/securePdfContent', str(res))
+        os.makedirs(path_to_upload)
+        files = request.FILES
+        for file in files.getlist('files'):
+            with open(path_to_upload + '/sample.pdf', 'w+b') as f:
+                for chunk in file.chunks():
+                    f.write(chunk)
+        securePdf(path_to_upload)
+        return render(request, 'securePdfContent.html', {'url': str(res)})            
+    return render(request,'securePdfContent.html')
+
 
 def pdftojpg(request):
     if request.method == "POST":
