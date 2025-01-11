@@ -28,7 +28,7 @@ def pdf_to_image(path_to_upload):  # required poppler for this operation
     try:
         # Convert PDF to images
         pdf_path = os.path.join(path_to_upload, 'sample.pdf')
-        images = convert_from_path(pdf_path, dpi=120, poppler_path=r'.\poppler\bin')
+        images = convert_from_path(pdf_path, dpi=130, poppler_path=r'.\poppler\bin')
 
         # Create directories for images and ZIP
         image_folder = os.path.join(path_to_upload, "sample")
