@@ -7,7 +7,7 @@ def securePdf(path_to_upload):
     try:
         pdf_path = os.path.join(path_to_upload, 'sample.pdf')
         # Convert PDF to images
-        images = convert_from_path(pdf_path, dpi=120, poppler_path=r'.\poppler\bin')
+        images = convert_from_path(pdf_path, dpi=130, poppler_path=r'.\poppler\bin')
 
         # Save each image to the output directory
         image_paths = []

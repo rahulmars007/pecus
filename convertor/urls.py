@@ -15,5 +15,5 @@ urlpatterns = [
     path('merge',views.merge),
     path('split',views.split),
     path('delete',views.delete),
-
+    path('securePdfContent',views.securePdfContent),
 ]
