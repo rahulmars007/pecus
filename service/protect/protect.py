@@ -1,13 +1,13 @@
-from PyPDF2 import PdfFileWriter, PdfFileReader
+from PyPDF2 import PdfWriter, PdfReader
 
 def encryption(input_pdf, password):
-    pdf_writer = PdfFileWriter()
-    pdf_reader = PdfFileReader(input_pdf+'/sample.pdf')
+    pdf_writer = PdfWriter()
+    pdf_reader = PdfReader(input_pdf+'/sample.pdf')
 
-    for page in range(pdf_reader.getNumPages()):
-        pdf_writer.addPage(pdf_reader.getPage(page))
+    for page in pdf_reader.pages:
+        pdf_writer.add_page(page)
 
-    pdf_writer.encrypt(user_pwd=password, owner_pwd=None, 
+    pdf_writer.encrypt(user_password=password, owner_password=None, 
                        use_128bit=True)
 
     with open(input_pdf+'/protect.pdf', 'wb') as fh:
